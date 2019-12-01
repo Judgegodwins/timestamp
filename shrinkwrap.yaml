@@ -409,5 +409,5 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
-  cors: ^2.8.0
+  cors: ^2.8.5
   express: ^4.12.4
