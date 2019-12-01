@@ -8,7 +8,7 @@ var app = express();
 // enable CORS (https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
 // so that your API is remotely testable by FCC 
 var cors = require('cors');
-app.use(cors({optionSuccessStatus: 200}));  // some legacy browsers choke on 204
+app.use(cors());  // some legacy browsers choke on 204
 
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
@@ -23,8 +23,9 @@ app.get("/", function (req, res) {
 app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
+
 app.get("/api/timestamp/", (req, res) => {
-  res.send({unix: new Date().valueOf(), utc: new Date().toUTCString()});
+  res.json({unix: new Date().valueOf(), utc: new Date().toUTCString()});
 });
 
 app.get("/api/timestamp/:date_string", (req, res) => {
